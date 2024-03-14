@@ -1,0 +1,701 @@
+/* Está importando una fuente de Google Fonts. Específicamente, se trata de importar la familia de
+fuentes Poppins con diferentes pesos (300, 400, 600, 700) para usar en los estilos CSS de la página
+web. La parte `display=swap` de la URL indica que la fuente debe mostrarse inmediatamente utilizando
+una fuente alternativa hasta que la fuente Poppins esté completamente cargada y lista para
+mostrarse. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* El selector `:root` en CSS se usa para definir variables CSS globales a las que se puede acceder y
+usar en toda la hoja de estilo. */
+:root {
+    --padding-container: 100px 0;
+    --color-title: #001A49;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+
+/* El bloque CSS `.encabezado` le da estilo a una sección de encabezado de una página web. A
+continuación se muestra un desglose de lo que hace cada propiedad: */
+.encabezado {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+}
+
+/* El bloque CSS `.encabezado::before` está creando un pseudoelemento que se inserta antes del
+contenido del elemento con la clase `.encabezado`. A continuación se muestra un desglose de lo que
+hace cada propiedad: */
+.encabezado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images/computer.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+}
+
+/* El bloque CSS `.encabezado-otros` le da estilo a una sección del encabezado de la página web. A
+continuación se muestra un desglose de lo que hace cada propiedad: */
+.encabezado-otros {
+    background-color: #1D293F;
+    width: 100%;
+    height: 100vh;
+    min-height: 100px;
+    max-height: 50px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+/**
+ * Estilos para la clase .nav:
+ * Define la apariencia de un elemento de navegación.
+ * Características principales incluyen una variable de padding, altura, display flex, y alineación vertical.
+ */
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/**
+ * Estilos para la clase .nav__titulo:
+ * Define la propiedad de peso de fuente en 300 para los elementos con esta clase.
+ * Esto resulta en un peso de fuente más ligero que el predeterminado, pero no tan ligero como "100" o "200".
+ */
+.nav__titulo {
+    font-weight: 300;
+}
+
+/* El bloque CSS `.nav__link` le da estilo a un elemento de enlace de navegación. A continuación se
+muestra un desglose de lo que hace cada propiedad: */
+.nav__link {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+/* La regla CSS `.nav__items {estilo de lista: ninguno; }` está eliminando el estilo de lista
+predeterminado (generalmente viñetas o números) de los elementos con la clase `nav__items`. Esto
+significa que cualquier elemento de lista dentro de un elemento con la clase `nav__items` no
+mostrará el marcador de estilo de lista predeterminado. Es una técnica común utilizada para diseñar
+listas o menús de navegación sin el estilo de lista predeterminado. */
+.nav__items {
+    list-style: none;
+}
+
+/* La regla CSS `.nav__links` aplica estilos a elementos con la clase `nav__links`. Específicamente,
+establece el color del texto en blanco (`#fff`) y elimina la decoración subrayada de los enlaces de
+texto usando `text-decoration: none;`. Esta regla garantiza que los enlaces de navegación dentro de
+los elementos que tienen la clase `nav__links` aparecerán como texto blanco sin subrayados. */
+.nav__links {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* La regla CSS `.nav__img` apunta a un elemento con la clase `nav__img` y le aplica estilo.
+Específicamente, está configurando la propiedad de visualización en "bloque", lo que significa que
+el elemento se mostrará como un elemento a nivel de bloque. Además, establece el ancho del elemento
+en "30px", lo que significa que el elemento tendrá un ancho de 30 píxeles. Es probable que esta
+regla se use para diseñar una imagen o ícono dentro de un componente de navegación en la página web. */
+.nav__img {
+    display: block;
+    width: 30px;
+}
+
+
+/* La regla CSS `.nav__cerrar { display: var(--show, none); }` está configurando la propiedad de
+visualización de elementos con la clase `nav__cerrar` en función del valor de una variable CSS
+personalizada `--show`. */
+.nav__cerrar {
+    display: var(--show, none);
+}
+
+
+/* El bloque CSS `.btn-estilo` define estilos para un elemento de botón con la clase `btn-estilo`. A
+continuación se muestra un desglose de lo que hace cada propiedad: */
+.btn-estilo {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* La regla CSS `.btn-estilo:hover` apunta al elemento del botón con la clase `btn-estilo` cuando está
+en un estado suspendido. */
+.btn-estilo:hover {
+    background-color: #f5f5f5;
+    color: #001A49;
+}
+
+
+/* El bloque `.encabezado__contenedor` en el CSS define estilos para un contenedor dentro de la sección
+de encabezado de una página web. A continuación se muestra un desglose de lo que hace cada
+propiedad: */
+.encabezado__contenedor {
+    max-width: 800px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.encabezado__titulo {
+    font-size: 3rem;
+}
+
+.encabezado__parrafo{
+    margin-bottom: 20px;
+}
+
+/* El código anterior define una clase CSS llamada "cta" que se utiliza para diseñar un botón de
+llamada a la acción. */
+.cta {
+    display: inline-block;
+    background-color: #2091F9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+/*Alinea el texto al centro*/
+.tip {
+    text-align: center;
+}
+
+/* El código anterior define una clase CSS llamada ".subtitulo". Esta clase establece el color del
+texto en una variable CSS personalizada llamada "--color-title", establece el tamaño de fuente en
+2rem y agrega un margen inferior de 25px. */
+.subtitulo {
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+
+/**
+ * Establece la altura de línea en 1.7, lo que afecta el espacio entre líneas dentro de los elementos con esta clase.
+ */
+.tip__parrafo {
+    line-height: 1.7;
+}
+
+/* El código CSS anterior aplica estilo a un contenedor con la clase "tip__main". Establece el
+padding-top en 80px, muestra el contenedor como una cuadrícula, establece el ancho en 90% con
+márgenes configurados para centrarlo horizontalmente, establece un espacio de 1em entre los
+elementos de la cuadrícula, oculta cualquier contenido desbordado y define las columnas de la
+plantilla de la cuadrícula. para repetir y ajustar automáticamente según el espacio disponible, con
+un ancho mínimo de 260px. */
+.tip__main {
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+
+/* El código CSS anterior aplica estilo a un contenedor con la clase "tip__iconos". Está configurando
+la propiedad de visualización en cuadrícula, con un espacio de 1 em entre los elementos de la
+cuadrícula. Está centrando los elementos de la cuadrícula horizontalmente con justify-items: center.
+El contenedor tiene un ancho fijo de 260 px, con el desbordamiento configurado en oculto para
+ocultar cualquier contenido que exceda las dimensiones del contenedor. Finalmente, el contenedor se
+centra horizontalmente en la página con margen: 0 auto. */
+.tip__iconos {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.tip__icono {
+    width: 40px;
+}
+
+/* El código CSS anterior está diseñando una clase llamada "ventaja". Establece el color de fondo en
+azul oscuro (#46469c) y crea una imagen de fondo usando dos degradados radiales. El primer degradado
+radial crea un patrón de círculos de color azul oscuro sobre un fondo transparente, mientras que el
+segundo degradado radial crea un patrón de círculos de color azul oscuro sobre un fondo azul claro.
+Estos dos patrones se repiten en el fondo con un tamaño de 20 px por 20 px y se colocan en 0 0 y 10
+px 10 px respectivamente. El "desbordamiento: oculto"; La propiedad se utiliza para garantizar que
+cualquier contenido */
+.ventaja {
+    background-color: #46469c; 
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    overflow: hidden;
+}
+
+/* El código CSS anterior aplica estilo a un contenedor con la clase "ventaja__contenedor" usando CSS
+Grid. Está configurando el contenedor para que se muestre como una cuadrícula con dos columnas de
+igual ancho (1fr 1fr), con un espacio de 1em entre las columnas. Los elementos dentro de la
+cuadrícula se alinearán verticalmente centrados. */
+.ventaja__contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.ventaja__foto{
+    max-width: 500px;
+}
+
+.ventaja__parrafo{
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* El código CSS anterior está diseñando una clase llamada "ventaja__texts". Establece el ancho del
+elemento en 500 px, utiliza la visualización de cuadrícula para diseñar sus elementos secundarios y
+centra el texto dentro del elemento. */
+.ventaja__texts{
+    width: 500px;
+    display: grid;
+    text-align: center;
+}
+
+.ventaja__img{
+    width: 100%;
+    display: block;
+}
+
+/*curiosidad */
+
+.curiosidad{
+    background-color: #ffffff;
+}
+
+/* El código CSS anterior aplica estilo a un contenedor con la clase "curiosidad__contenedor" usando
+las propiedades de CSS Grid. Está configurando el contenedor para que tenga un diseño de cuadrícula
+con tres columnas: una columna de ancho fijo de 50 px a la izquierda, una columna de ancho flexible
+en el medio que ocupa el espacio restante (1fr) y otra columna de ancho fijo de 50 px en el bien. La
+propiedad "espacio" agrega un espacio de 1 em entre los elementos de la cuadrícula, y la propiedad
+"alinear elementos" centra los elementos verticalmente dentro del contenedor de la cuadrícula. */
+.curiosidad__contenedor{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+/* El código CSS anterior está diseñando una clase llamada `.curiosidad__body`. Es establecer la
+propiedad de visualización en cuadrícula, definir las columnas de la plantilla de cuadrícula con una
+unidad de fracción y el ancho máximo del contenido, justificar el contenido al espacio entre ellos,
+alinear elementos al centro, establecer un espacio de 2 em entre elementos de la cuadrícula,
+especificar la columna de la cuadrícula. para abarcar desde la segunda a la tercera columna,
+configurar la fila de la cuadrícula para que abarque desde la primera a la segunda fila, establecer
+la opacidad en 0 (haciéndola invisible) y deshabilitar los eventos de puntero en el elemento. */
+.curiosidad__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* El código CSS anterior apunta a un elemento con la clase "curiosidad__body--show" y establece su
+propiedad pointer-events en "unset" y opacidad en 1. También incluye un efecto de transición en la
+propiedad de opacidad con una duración de 1,5 segundos y una función de sincronización de entrada y
+salida fácil. Es probable que este código se utilice para hacer que el elemento sea visible e
+interactivo con un efecto de transición suave cuando se muestra en la página web. */
+.curiosidad__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* El código CSS anterior aplica estilo a una imagen con la clase "curiosidad__img". Establece el ancho
+y el alto de la imagen en 250 px cada uno, aplica un radio de borde del 50 % para hacer que la
+imagen sea circular y utiliza el ajuste de objeto para especificar cómo se debe cambiar el tamaño de
+la imagen para que se ajuste a su contenedor conservando al mismo tiempo su relación de aspecto. La
+propiedad de posición del objeto se utiliza para definir la alineación de la imagen dentro de su
+contenedor. En este caso posiciona la imagen horizontalmente al 50% y verticalmente al 30% dentro
+del contenedor. */
+.curiosidad__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.curiosidad__texts{
+    max-width: 700px;
+}
+
+/**
+ * Estilos para la clase .curiosidad__curso:
+ * - Establece el color de fondo en royalblue
+ * - Establece el color del texto en blanco
+ * - Muestra el elemento como un bloque en línea
+ * - Agrega un relleno de 5 píxeles
+ */
+.curiosidad__curso {
+    background-color: royalblue;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+/**
+ * Estilos para la clase .curiosidad__flecha:
+ * - Establece el ancho al 90%
+ * - Cambia el cursor al estilo de puntero
+ */
+.curiosidad__flecha {
+    width: 90%;
+    cursor: pointer;
+}
+
+.curiosidad__revision{
+    font-size: 20px;
+}
+
+
+/*PReguntas */
+
+.preguntas{
+    text-align: center;
+}
+
+/**
+ * Estilos para la clase .preguntas__contenedor:
+ * Define un diseño de cuadrícula para los elementos hijos.
+ * Establece un espacio entre las filas y columnas de 2em.
+ * Agrega un relleno en la parte superior de 50px y en la parte inferior de 100px.
+ */
+.preguntas__contenedor {
+    display: grid;
+    gap: 2em;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+/**
+ * Estilos para la clase .preguntas__padding:
+ * - Elimina el relleno
+ * - Agrega una transición suave para el cambio del relleno
+ * - Agrega un borde de 1px sólido con color #5454D4 y un radio de borde de 6px
+ */
+.preguntas__padding {
+    padding: 0;
+    transition: padding .3s;
+    border: 1px solid #5454D4;
+    border-radius: 6px;
+}
+
+.preguntas__padding--add{
+    padding-bottom: 30px;
+}
+
+/**
+ * Estilos para la clase .preguntas__respuesta:
+ * Define un relleno de 0 en la parte superior e inferior y 30px en los lados
+ * Oculta cualquier contenido que se desborde del contenedor
+ */
+.preguntas__respuesta {
+    padding: 0 30px 0;
+    overflow: hidden;
+}
+
+/**
+ * Estilos para la clase .preguntas__titulo:
+ * - Alinea el texto a la izquierda
+ * - Muestra los elementos como flex
+ * - Establece el tamaño de fuente en 20px
+ * - Define un relleno de 30px en la parte superior y 0 en los lados
+ * - Cambia el cursor al estilo de puntero
+ * - Establece el color del texto utilizando la variable --color-title
+ * - Justifica el contenido con espacio entre los elementos
+ */
+.preguntas__titulo {
+    text-align: left;
+    display: flex;
+    font-size: 20px;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    color: var(--color-title);
+    justify-content: space-between;
+}
+
+/**
+ * Estilos para la clase .preguntas__flecha:
+ * Define la apariencia de una flecha utilizada en un contexto de preguntas o títulos.
+ * La flecha tiene un borde redondeado con forma de círculo y un color de fondo definido por la variable --color-title.
+ * Tiene dimensiones de 25px de ancho y alto, y se centra tanto horizontal como verticalmente en su contenedor.
+ * Se alinea a sí misma en la parte inferior del contenedor flex para ajustar su posición.
+ * Además, tiene un margen a la izquierda de 10px para separarse visualmente de otros elementos.
+ * Se ha aplicado una transición suave para el efecto de transformación, lo que proporciona una animación fluida al interactuar con la flecha.
+ */
+.preguntas__flecha {
+    border-radius: 50%;
+    background-color: var(--color-title);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: transform .3s;
+}
+
+/* Permite la rotación de la flecha en la clase .preguntas__flecha--rotar
+    con una rotacion de 180°
+*/
+.preguntas__flecha--rotar{
+    transform: rotate(180deg);
+}
+
+
+/**
+ * Estilos para la clase .preguntas__show:
+ * - Alinea el texto a la izquierda
+ * - Establece la altura en 0, lo que oculta el contenido
+ * - Agrega una transición suave para el cambio de altura
+ */
+.preguntas__show {
+    text-align: left;
+    height: 0;
+    transition: height .3s;
+}
+
+.preguntas__img{
+    display: block;
+}
+
+/**
+ * Estilos para la clase .preguntas__copy:
+ * - Establece un ancho del 60%
+ * - Centra horizontalmente el elemento con un margen automático a la izquierda y derecha
+ * - Agrega un margen en la parte inferior de 30px
+ */
+.preguntas__copy {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+/**
+ * Estilos para la clase .preguntas__parrafo:
+ * - Establece el peso de la fuente en 300 (ligero)
+ * - Establece el tamaño de fuente en 20px
+ */
+.preguntas__parrafo {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/**
+ * Estilos para la clase .preguntas__final:
+ * - Define un relleno de 0 en la parte superior e inferior y 30px en los lados
+ * - Oculta cualquier contenido que se desborde del contenedor
+ * - Alinea el texto al centro
+ */
+.preguntas__final {
+    padding: 0 30px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/**
+ * - Alinea el texto al centro
+ */
+.contacto {
+    text-align: center;
+}
+
+
+
+/************* Pie de pagina - footer **************/
+
+.footer{
+    background-color: #1D293F;
+}
+
+.footer__title{
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.footer__title, .footer__newsletter{
+    color: #fff;
+}
+
+
+/**
+ * Estilos para la clase .footer__container:
+ * - Muestra los elementos como flex y los distribuye con espacio entre ellos
+ * - Alinea los elementos al centro verticalmente
+ * - Agrega un borde inferior de 1px sólido con color #fff
+ * - Agrega un relleno en la parte inferior de 60px
+ */
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+/**
+ * Estilos para la clase .footer__container:
+ * Define el diseño del contenedor del pie de página.
+ * Los elementos dentro del contenedor se muestran como flex y se distribuyen con espacio entre ellos, lo que los separa horizontalmente.
+ * Los elementos se alinean al centro verticalmente para centrar su contenido.
+ * Se agrega un borde inferior sólido de 1px con color #fff para separar el pie de página del contenido principal.
+ * Se añade un relleno en la parte inferior de 60px para dar espacio entre el contenido y el pie de página.
+ */
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+/**
+ * Estilos para la clase .nav__link--footer:
+ * Define la apariencia de los enlaces de navegación en el pie de página.
+ * Los enlaces se muestran como flex para permitir el diseño flexible.
+ * Se elimina cualquier margen predeterminado y se agrega un margen a la derecha de 20px para separar los enlaces.
+ * Se permite que los elementos se envuelvan en caso de que no haya suficiente espacio horizontal.
+ */
+.nav__link--footer {
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+
+/**
+ * Estilos para la clase .footer__inputs:
+ * - Agrega un margen en la parte superior de 10px
+ * - Muestra el elemento como bloque
+ * - Oculta cualquier contenido que se desborde del contenedor
+ */
+.footer__inputs {
+    margin-top: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+/**
+ * Estilos para la clase .footer__input:
+ * Define la apariencia de un campo de entrada en el pie de página.
+ * Características principales incluyen color de fondo, altura, padding, bordes redondeados, tamaño de fuente, y márgenes.
+ */
+.footer__input {
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/**
+ * Estilos para la clase .footer__submit:
+ * Define la apariencia de un botón de envío en el pie de página.
+ * Características principales incluyen margen izquierdo, altura, padding, color de fondo, borde, tamaño de fuente, color de texto, bordes redondeados, y cursor.
+ */
+.footer__submit {
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #2091F9;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/**
+ * Estilos para la clase .footer__copy:
+ * Define la apariencia de un elemento de copia en el pie de página.
+ * Características principales incluyen variables de padding, alineación de texto y color de texto.
+ */
+.footer__copy {
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+/**
+ * Estilos para la clase .footer__copyright:
+ * Define la apariencia del texto de derechos de autor en el pie de página.
+ * Características principales incluyen el peso de la fuente.
+ */
+.footer__copyright {
+    font-weight: 300;
+}
+
+/**
+ * Estilos para la clase .footer__icons:
+ * Define la apariencia de un conjunto de iconos en el pie de página.
+ * Características principales incluyen margen inferior.
+ */
+.footer__icons {
+    margin-bottom: 10px;
+}
+
+/**
+ * Estilos para la clase .footer__img:
+ * Define la apariencia de una imagen en el pie de página.
+ * Características principales incluyen ancho.
+ */
+.footer__img {
+    width: 30px;
+}
